@@ -9,6 +9,7 @@ public class ExceptionExample1 {
     @Test
     void test_exception() {
 
+    	//(expected ,resultactual);
         Exception exception = assertThrows(ArithmeticException.class, () -> divide(1, 0));
 
         assertEquals("/ by zero", exception.getMessage());

@@ -11,6 +11,7 @@ import java.util.Map;
 
 import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
+//import static org.hamcrest.MatcherAssert.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 public class AssertjTest {
