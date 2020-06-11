@@ -14,23 +14,22 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia;
+package com.formation;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static java.time.Duration.ofMillis;
+import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-class GroupedAssertionsTest {
+class TimeoutWithPreemptiveTerminationTest {
 
+    @Disabled
     @Test
-    void groupedAssertions() {
-        Address address = new Address("John", "Smith");
-
-        // In a grouped assertion all assertions are executed, and any
-        // failures will be reported together.
-        assertAll("address", () -> assertEquals("John", address.getFirstName()),
-                () -> assertEquals("Smith", address.getLastName()));
+    void timeoutExceededWithPreemptiveTermination() {
+        assertTimeoutPreemptively(ofMillis(10), () -> {
+            Thread.sleep(100);
+        });
     }
 
 }

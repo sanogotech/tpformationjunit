@@ -1,8 +1,9 @@
-package com.formation.basics;
+package com.formation.customer.service;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +16,7 @@ public class CalculatorTest {
 	
 	@BeforeAll
 	// 1 Setup
-	public static void init(){
+	public static void  init(){
 		//init  All
 		System.out.println("Before All init() method called");
 		x = 18;
@@ -60,6 +61,27 @@ public class CalculatorTest {
 		System.out.println("Assertions  Add...");
 		// 3.  Verify
 		Assertions.assertEquals(486,resultactual , "18 * 27 should equal 486");
+		
+	}
+	
+	
+
+	@Test
+	public void multiplyNumberV2() {
+		
+				//Init //local
+				//TODO
+				System.out.println("Init V2 for   multiplyNumber() ...");
+				
+				//Call  Service // reponse
+				//2.  Run  Exercise
+				System.out.println("Call Service / Response  ...");
+				int resultactual = Calculator.multiply(x, y);
+				
+				//Assertions.assertEquals(expected ,resultactual , "Message");
+				System.out.println("Assertions  Add...");
+				// 3.  Verify
+				Assertions.assertEquals(486,resultactual , "18 * 27 should equal 486");
 	}
 	
 	

@@ -14,22 +14,32 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia;
+package com.formation;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+public class Address {
 
-import org.junit.jupiter.api.Test;
+    public String firstName;
+    public String lastName;
 
-class ExceptionTest {
+    public Address(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
-    @Test
-    void exceptionTesting() {
-        Throwable exception = assertThrows(IllegalArgumentException.class,
-                () -> {
-                    throw new IllegalArgumentException("a message");
-                });
-        assertEquals("a message", exception.getMessage());
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
 }

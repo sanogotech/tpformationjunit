@@ -14,33 +14,22 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia;
+package com.formation;
 
-import static java.time.Duration.ofMinutes;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTimeout;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-class TimeoutWithResultOrMethodTest {
+class ExceptionTest {
 
     @Test
-    void timeoutNotExceededWithResult() {
-        String actualResult = assertTimeout(ofMinutes(1), () -> {
-            return "hi there";
-        });
-        assertEquals("hi there", actualResult);
-    }
-
-    @Test
-    void timeoutNotExceededWithMethod() {
-        String actualGreeting = assertTimeout(ofMinutes(1),
-                TimeoutWithResultOrMethodTest::greeting);
-        assertEquals("hello world!", actualGreeting);
-    }
-
-    private static String greeting() {
-        return "hello world!";
+    void exceptionTesting() {
+        Throwable exception = assertThrows(IllegalArgumentException.class,
+                () -> {
+                    throw new IllegalArgumentException("a message");
+                });
+        assertEquals("a message", exception.getMessage());
     }
 
 }

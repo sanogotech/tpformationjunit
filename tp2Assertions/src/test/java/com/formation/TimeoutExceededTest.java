@@ -14,20 +14,28 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia;
+package com.formation;
 
 import static java.time.Duration.ofMillis;
-import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
+import static java.time.Duration.ofMinutes;
+import static org.junit.jupiter.api.Assertions.assertTimeout;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-class TimeoutWithPreemptiveTerminationTest {
+class TimeoutExceededTest {
+
+    @Test
+    void timeoutNotExceeded() {
+        assertTimeout(ofMinutes(2), () -> {
+            // Perform task that takes less than 2 minutes
+        });
+    }
 
     @Disabled
     @Test
-    void timeoutExceededWithPreemptiveTermination() {
-        assertTimeoutPreemptively(ofMillis(10), () -> {
+    void timeoutExceeded() {
+        assertTimeout(ofMillis(10), () -> {
             Thread.sleep(100);
         });
     }

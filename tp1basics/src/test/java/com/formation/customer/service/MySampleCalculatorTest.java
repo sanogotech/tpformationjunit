@@ -1,4 +1,4 @@
-package com.formation.basics;
+package com.formation.customer.service;
 
 
 import org.junit.jupiter.api.AfterAll;

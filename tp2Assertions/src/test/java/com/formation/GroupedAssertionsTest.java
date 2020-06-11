@@ -14,30 +14,25 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia;
+package com.formation;
 
-import static java.time.Duration.ofMillis;
-import static java.time.Duration.ofMinutes;
-import static org.junit.jupiter.api.Assertions.assertTimeout;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-class TimeoutExceededTest {
+import com.formation.Address;
+
+class GroupedAssertionsTest {
 
     @Test
-    void timeoutNotExceeded() {
-        assertTimeout(ofMinutes(2), () -> {
-            // Perform task that takes less than 2 minutes
-        });
-    }
+    void groupedAssertions() {
+        Address address = new Address("John", "Smith");
 
-    @Disabled
-    @Test
-    void timeoutExceeded() {
-        assertTimeout(ofMillis(10), () -> {
-            Thread.sleep(100);
-        });
+        // In a grouped assertion all assertions are executed, and any
+        // failures will be reported together.
+        assertAll("address", () -> assertEquals("John", address.getFirstName()),
+                () -> assertEquals("Smith", address.getLastName()));
     }
 
 }

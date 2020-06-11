@@ -14,22 +14,22 @@
  * limitations under the License.
  *
  */
-package io.github.bonigarcia;
+package com.formation;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.jupiter.api.Test;
 
-class StandardAssertionsTest {
+class HamcrestTest {
 
     @Test
-    void standardAssertions() {
-        assertEquals(2, 2);
-        assertTrue(true,
-                "The optional assertion message is now the last parameter");
-        assertFalse(false, () -> "Really " + "expensive " + "message" + ".");
+    void assertWithHamcrestMatcher() {
+        assertThat(2 + 1, equalTo(3));
+        assertThat("Foo", notNullValue());
+        assertThat("Hello world", containsString("world"));
     }
 
 }
