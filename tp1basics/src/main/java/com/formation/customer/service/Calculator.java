@@ -7,6 +7,13 @@ public class Calculator {
 	public static int add(int i, int j) {
 		return i + j;
 	}
+	
+	/*
+	public static int add() {
+		//apiCalculator.getx
+		//apiCalculator.gety
+		
+	}*/
 
 	public static int subtract(int x, int y) {
 		
