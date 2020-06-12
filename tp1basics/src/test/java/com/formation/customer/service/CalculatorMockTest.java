@@ -9,7 +9,11 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.*;
 //Mockito
 import static org.mockito.Mockito.when;
+
+import java.util.Optional;
+
 import static org.mockito.Mockito.atLeast;
+import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.verify;
 import org.mockito.Mock;
 import org.mockito.InjectMocks;
@@ -42,9 +46,11 @@ public class CalculatorMockTest {
 		//given(apiCalculatorRepository.getX()).willReturn(18);
 		//given(apiCalculatorRepository.getY()).willReturn(27);
 		
+		
 		//When Call Mock
 		 when(apiCalculatorRepository.getX()).thenReturn(18);
 		 when(apiCalculatorRepository.getY()).thenReturn(27);
+		 //doReturn(27).when(apiCalculatorRepository).getY();
 	
 		//When call service
 		int resultActual = calculator.addDBdata();
