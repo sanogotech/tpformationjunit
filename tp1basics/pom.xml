@@ -18,6 +18,7 @@
         <junit-jupiter.version>5.5.2</junit-jupiter.version>
         <junit.platform.version>1.5.2</junit.platform.version>
         <assertj-version>3.14.0</assertj-version>
+        <mockito-junit-jupiter.version>2.19.0</mockito-junit-jupiter.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -66,6 +67,13 @@
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest</artifactId>
             <version>2.2</version>
+            <scope>test</scope>
+        </dependency>
+        
+          <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mockito-junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
 
