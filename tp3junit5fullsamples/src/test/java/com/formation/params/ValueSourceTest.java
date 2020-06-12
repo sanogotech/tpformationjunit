@@ -15,7 +15,7 @@ public class ValueSourceTest {
     }
 
     @ParameterizedTest(name = "#{index} - Run test with args={0}")
-    @ValueSource(ints = {1, 2, 3})
+    @ValueSource(ints = {22,1, 2, 3})
     void test_int_arrays_custom_name(int arg) {
         assertTrue(arg > 0);
     }

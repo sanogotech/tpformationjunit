@@ -38,7 +38,8 @@ public class SearchTestTest {
     //driver.quit();
   }
   @Test
-  public void searchTest(FirefoxDriver driver) {
+  //public void searchTest(FirefoxDriver driver) {
+  public void searchTest(ChromeDriver driver) {
     driver.get("https://www.google.com/");
     driver.manage().window().setSize(new Dimension(1366, 720));
     driver.findElement(By.name("q")).sendKeys("junit 5 in action");
