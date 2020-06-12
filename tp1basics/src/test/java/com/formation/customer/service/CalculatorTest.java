@@ -11,12 +11,12 @@ import com.formation.customer.service.Calculator;
 
 public class CalculatorTest {
 	
-	private static int  x;
-	private static int  y;
+	private  int  x;
+	private  int  y;
 	
 	@BeforeAll
 	// 1 Setup
-	public static void  init(){
+	public void  init(){
 		//init  All
 		System.out.println("Before All init() method called");
 		x = 18;
